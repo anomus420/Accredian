@@ -69,7 +69,7 @@ The project was constructed following a modular, clean-architecture approach:
 
 ---
 
-## 🤖 Professional AI Usage Disclosure
+## 🤖  AI Usage 
 
 I built this project utilizing an AI-assisted development workflow (pairing with **Google DeepMind's Antigravity** assistant) to maximize velocity and output quality. 
 
