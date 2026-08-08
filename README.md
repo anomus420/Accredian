@@ -11,6 +11,7 @@ A high-performance, responsive redesign of the Accredian Enterprise landing page
 *   **Animations**: Framer Motion (Scroll-triggered viewport drawings, floating spring-physics orbits, and custom theme switches).
 *   **Validation**: React Hook Form with Zod schema resolution.
 *   **Database Simulation**: Server-side local file system (`data/leads.json`) managed via a transactional database module (`lib/db.ts`).
+*   **Referenced Website**: https://enterprise.accredian.com/
 
 ---
 
