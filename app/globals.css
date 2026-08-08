@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {
+  --color-brand-indigo: #3b5bff;
+  --color-brand-purple: #6c4cff;
+  --color-brand-teal: #14c6a5;
+  --color-brand-mint: #2fe0c0;
+  --color-brand-coral: #ff7a59;
+  --color-brand-amber: #ffb020;
+  --color-brand-violet: #8b5cf6;
+  --color-brand-magenta: #d946a0;
+  
+  --font-sans: var(--font-inter), sans-serif;
+  --font-display: var(--font-manrope), sans-serif;
+  
+  --animate-marquee: marquee 35s linear infinite;
+  --animate-drift: drift 15s ease-in-out infinite;
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @keyframes drift {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(4%, -4%) scale(1.08);
+    }
   }
 }
 
+:root {
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+}
+
+:root.dark {
+  --background: #0B0F19;
+  --foreground: #F5F6FA;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Custom Webkit scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #1e293b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #334155;
+}
+
+/* Hide default select and dropdown arrow in certain browsers */
+select::-ms-expand {
+  display: none;
+}
+
+/* Premium Dark Mode Dot-Grid Pattern */
+.dark-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0),
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
 }
